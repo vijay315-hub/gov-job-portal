@@ -1,50 +1,153 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Gujarat Govt Job Portal</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gujarat Govt Job Portal</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f6fb;
+}
+
+/* HEADER */
+.header {
+    background: #0b2a6f;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+/* SEARCH BAR */
+.search-box {
+    text-align: center;
+    margin: 20px;
+}
+
+.search-box input {
+    width: 60%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* CATEGORY */
+.categories {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.categories button {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    background: #1e88e5;
+    color: white;
+    cursor: pointer;
+}
+
+.categories button:hover {
+    background: #0b2a6f;
+}
+
+/* JOB CARDS */
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    margin: 0;
+    color: #0b2a6f;
+}
+
+.apply-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: green;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* FOOTER */
+.footer {
+    background: #0b2a6f;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+</style>
+
 </head>
 
-<body style="font-family: Arial; margin:0; background:#f4f6f9;">
+<body>
 
-<!-- Header -->
-<div style="background:#1e3a8a; color:white; padding:20px; text-align:center;">
+<!-- HEADER -->
+<div class="header">
     <h1>Gujarat Government Job Portal</h1>
-    <p>Latest Govt Jobs • Admit Card • Results</p>
+    <p>OJAS Style Job Updates | Admit Card | Results</p>
 </div>
 
-<!-- Menu -->
-<div style="background:#ffffff; padding:15px; text-align:center;">
-    <a href="#" style="margin:10px;">Home</a>
-    <a href="#" style="margin:10px;">Gujarat Jobs</a>
-    <a href="#" style="margin:10px;">Central Jobs</a>
-    <a href="#" style="margin:10px;">Results</a>
+<!-- SEARCH -->
+<div class="search-box">
+    <input type="text" placeholder="Search Govt Jobs (Police, Talati, Clerk...)">
 </div>
 
-<!-- Content -->
-<div style="padding:20px;">
-
-<h2>Latest Jobs</h2>
-
-<div style="background:white; padding:15px; margin-bottom:10px;">
-    <h3>Police Bharti 2026</h3>
-    <a href="https://ojas.gujarat.gov.in" target="_blank">Apply on OJAS</a>
+<!-- CATEGORY -->
+<div class="categories">
+    <button>All Jobs</button>
+    <button>Gujarat Jobs</button>
+    <button>10th Pass</button>
+    <button>12th Pass</button>
+    <button>Graduate</button>
 </div>
 
-<div style="background:white; padding:15px; margin-bottom:10px;">
-    <h3>Talati Recruitment</h3>
-    <p>Notification coming soon</p>
+<!-- JOB LIST -->
+<div class="container">
+
+    <div class="card">
+        <h3>Gujarat Police Bharti 2026</h3>
+        <p>Apply online through OJAS portal</p>
+        <a class="apply-btn" href="https://ojas.gujarat.gov.in" target="_blank">Apply Now</a>
+    </div>
+
+    <div class="card">
+        <h3>Talati Recruitment 2026</h3>
+        <p>Village Revenue Clerk Bharti</p>
+        <a class="apply-btn" href="https://ojas.gujarat.gov.in" target="_blank">Apply Now</a>
+    </div>
+
+    <div class="card">
+        <h3>Clerk Bharti</h3>
+        <p>Government Office Recruitment</p>
+        <a class="apply-btn" href="#">Coming Soon</a>
+    </div>
+
 </div>
 
-<div style="background:white; padding:15px;">
-    <h3>Clerk Bharti</h3>
-    <p>Update soon</p>
-</div>
-
-</div>
-
-<!-- Footer -->
-<div style="background:#1e3a8a; color:white; text-align:center; padding:10px;">
-    © 2026 Govt Job Portal
+<!-- FOOTER -->
+<div class="footer">
+    © 2026 Gujarat Govt Job Portal | Made by Vijay
 </div>
 
 </body>
