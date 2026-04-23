@@ -1,85 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Job Updates</title>
 
 <style>
 body {
+    font-family: Arial;
+    background: #f5f5f5;
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f7f7f7;
-    color: #222;
 }
 
-/* HEADER */
 header {
+    background: #111;
+    color: white;
+    padding: 20px;
     text-align: center;
-    padding: 40px 20px;
-    background: white;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-header p {
-    color: #666;
-    margin-top: 8px;
-}
-
-/* CONTAINER */
 .container {
     width: 90%;
     max-width: 800px;
     margin: auto;
+    padding-top: 20px;
 }
 
-/* CARD */
 .card {
     background: white;
-    margin: 15px 0;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    transition: 0.2s;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.card:hover {
-    transform: translateY(-2px);
-}
-
-.card h2 {
-    margin: 0;
-    font-size: 18px;
-}
-
-.card p {
-    color: #666;
-    margin: 8px 0;
-}
-
-/* BUTTON */
-.btn {
-    display: inline-block;
-    padding: 8px 14px;
+a {
     background: black;
     color: white;
+    padding: 6px 10px;
     text-decoration: none;
-    border-radius: 8px;
-    font-size: 13px;
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 30px;
-    color: #888;
-    font-size: 13px;
+    border-radius: 5px;
 }
 </style>
 
@@ -88,35 +47,50 @@ footer {
 <body>
 
 <header>
-    <h1>Job Updates</h1>
-    <p>Clean & Simple Government Job Information</p>
+<h1>Job Updates Portal</h1>
+<p>Auto Updated from Google Sheet</p>
 </header>
 
-<div class="container">
-
-    <div class="card">
-        <h2>Gujarat Police Bharti 2026</h2>
-        <p>Online application available through official portal</p>
-        <a class="btn" href="https://ojas.gujarat.gov.in" target="_blank">Apply</a>
-    </div>
-
-    <div class="card">
-        <h2>Talati Recruitment</h2>
-        <p>Revenue department vacancy updates</p>
-        <a class="btn" href="#">Details</a>
-    </div>
-
-    <div class="card">
-        <h2>Clerk Vacancy</h2>
-        <p>Upcoming government office recruitment</p>
-        <a class="btn" href="#">Coming Soon</a>
-    </div>
-
+<div class="container" id="jobs">
+Loading jobs...
 </div>
 
-<footer>
-    © 2026 Job Updates | Simple & Clean Design
-</footer>
+<script>
+
+// 🔴 PASTE YOUR GOOGLE SHEET CSV LINK HERE
+const sheetURL = "https://docs.google.com/spreadsheets/d/1PcUU-H3VQ1D66wSMYo9FmTZrs009c9epdbznHl7Pi8U/edit?usp=sharing";
+
+fetch(sheetURL)
+.then(res => res.text())
+.then(data => {
+
+    let rows = data.split("\n").slice(1);
+    let html = "";
+
+    rows.forEach(row => {
+        let cols = row.split(",");
+
+        let title = cols[0];
+        let desc = cols[1];
+        let link = cols[2];
+        let date = cols[3];
+
+        if(title) {
+            html += `
+            <div class="card">
+                <h3>${title}</h3>
+                <p>${desc}</p>
+                <small>${date}</small><br><br>
+                <a href="${link}" target="_blank">Apply</a>
+            </div>
+            `;
+        }
+    });
+
+    document.getElementById("jobs").innerHTML = html;
+});
+
+</script>
 
 </body>
 </html>
