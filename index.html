@@ -4,97 +4,82 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gujarat Govt Job Portal</title>
+<title>Job Updates</title>
 
 <style>
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f3f6fb;
+    background: #f7f7f7;
+    color: #222;
 }
 
 /* HEADER */
-.header {
-    background: #0b2a6f;
-    color: white;
-    padding: 20px;
+header {
     text-align: center;
+    padding: 40px 20px;
+    background: white;
 }
 
-.header h1 {
+header h1 {
     margin: 0;
-    font-size: 26px;
+    font-size: 28px;
+    font-weight: bold;
 }
 
-/* SEARCH BAR */
-.search-box {
-    text-align: center;
-    margin: 20px;
+header p {
+    color: #666;
+    margin-top: 8px;
 }
 
-.search-box input {
-    width: 60%;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-}
-
-/* CATEGORY */
-.categories {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.categories button {
-    margin: 5px;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 20px;
-    background: #1e88e5;
-    color: white;
-    cursor: pointer;
-}
-
-.categories button:hover {
-    background: #0b2a6f;
-}
-
-/* JOB CARDS */
+/* CONTAINER */
 .container {
     width: 90%;
+    max-width: 800px;
     margin: auto;
 }
 
+/* CARD */
 .card {
     background: white;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: 0.2s;
 }
 
-.card h3 {
+.card:hover {
+    transform: translateY(-2px);
+}
+
+.card h2 {
     margin: 0;
-    color: #0b2a6f;
+    font-size: 18px;
 }
 
-.apply-btn {
+.card p {
+    color: #666;
+    margin: 8px 0;
+}
+
+/* BUTTON */
+.btn {
     display: inline-block;
-    margin-top: 10px;
-    padding: 8px 12px;
-    background: green;
+    padding: 8px 14px;
+    background: black;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-size: 13px;
 }
 
 /* FOOTER */
-.footer {
-    background: #0b2a6f;
-    color: white;
+footer {
     text-align: center;
-    padding: 10px;
-    margin-top: 20px;
+    padding: 30px;
+    color: #888;
+    font-size: 13px;
 }
 </style>
 
@@ -102,53 +87,36 @@ body {
 
 <body>
 
-<!-- HEADER -->
-<div class="header">
-    <h1>Gujarat Government Job Portal</h1>
-    <p>OJAS Style Job Updates | Admit Card | Results</p>
-</div>
+<header>
+    <h1>Job Updates</h1>
+    <p>Clean & Simple Government Job Information</p>
+</header>
 
-<!-- SEARCH -->
-<div class="search-box">
-    <input type="text" placeholder="Search Govt Jobs (Police, Talati, Clerk...)">
-</div>
-
-<!-- CATEGORY -->
-<div class="categories">
-    <button>All Jobs</button>
-    <button>Gujarat Jobs</button>
-    <button>10th Pass</button>
-    <button>12th Pass</button>
-    <button>Graduate</button>
-</div>
-
-<!-- JOB LIST -->
 <div class="container">
 
     <div class="card">
-        <h3>Gujarat Police Bharti 2026</h3>
-        <p>Apply online through OJAS portal</p>
-        <a class="apply-btn" href="https://ojas.gujarat.gov.in" target="_blank">Apply Now</a>
+        <h2>Gujarat Police Bharti 2026</h2>
+        <p>Online application available through official portal</p>
+        <a class="btn" href="https://ojas.gujarat.gov.in" target="_blank">Apply</a>
     </div>
 
     <div class="card">
-        <h3>Talati Recruitment 2026</h3>
-        <p>Village Revenue Clerk Bharti</p>
-        <a class="apply-btn" href="https://ojas.gujarat.gov.in" target="_blank">Apply Now</a>
+        <h2>Talati Recruitment</h2>
+        <p>Revenue department vacancy updates</p>
+        <a class="btn" href="#">Details</a>
     </div>
 
     <div class="card">
-        <h3>Clerk Bharti</h3>
-        <p>Government Office Recruitment</p>
-        <a class="apply-btn" href="#">Coming Soon</a>
+        <h2>Clerk Vacancy</h2>
+        <p>Upcoming government office recruitment</p>
+        <a class="btn" href="#">Coming Soon</a>
     </div>
 
 </div>
 
-<!-- FOOTER -->
-<div class="footer">
-    © 2026 Gujarat Govt Job Portal | Made by Vijay
-</div>
+<footer>
+    © 2026 Job Updates | Simple & Clean Design
+</footer>
 
 </body>
 </html>
