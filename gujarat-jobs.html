@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>Gujarat Government Jobs 2026 | Latest OJAS Jobs</title>
+
+<meta name="description" content="Find latest Gujarat government jobs 2026. OJAS jobs, police, talati, clerk recruitment updates.">
+
+<meta name="keywords" content="Gujarat jobs, OJAS jobs, Gujarat govt jobs 2026, latest jobs Gujarat">
+
+<link rel="canonical" href="https://vijay315-hub.github.io/gov-job-portal/gujarat-jobs.html">
+
+<meta name="robots" content="index, follow">
+
+</head>
+
+<body>
+
+<h1>Gujarat Government Jobs 2026</h1>
+
+<p>Find all latest Gujarat government job updates including OJAS, police bharti, talati, clerk, and other recruitment.</p>
+
+<div id="jobs"></div>
+
+<script>
+
+const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQE0orW_Uem5Vi736r-rSdwHKpJLmCmHh9IhVjIs2au5nnhMjhWv8Pp1X-yKHRlo-LhHuzHc9dgHPSH/pub?output=csv";
+
+fetch(sheetURL)
+.then(res => res.text())
+.then(data => {
+
+    let rows = data.trim().split("\n").slice(1);
+    let html = "";
+
+    rows.forEach(row => {
+        let cols = row.split(",");
+        let title = cols[0];
+
+        if(title.toLowerCase().includes("gujarat")){
+
+            html += `
+            <div>
+                <h3>${cols[0]}</h3>
+                <p>${cols[1]}</p>
+                <a href="${cols[2]}" target="_blank">Apply</a>
+            </div>
+            `;
+        }
+    });
+
+    document.getElementById("jobs").innerHTML = html;
+});
+
+</script>
+
+</body>
+</html>
